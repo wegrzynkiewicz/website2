@@ -2,18 +2,15 @@ import {readFile} from "../helpers/files";
 
 const renderers = {
     js: function renderScript(path, options) {
-        return `<script src="${path}" defer></script>`;
+        return `<script src="${path}" defer crossorigin="anonymous"></script>`;
     },
     css: function renderLink(path, options) {
-        return `<link rel="stylesheet" href="${path}"/>`;
+        return `<link rel="stylesheet" href="${path}" crossorigin="anonymous"/>`;
     }
 }
 
 function forceArray(entries, entryPointName, extension) {
     const extensions = entries[entryPointName];
-    if (extensions) {
-
-    }
     const data = extensions[extension];
     const files = Array.isArray(data) ? data : [data];
     return files;

@@ -1,0 +1,8 @@
+{% extends "parts/document.twig" %}
+
+{% block document_content %}
+    {% include "parts/nav-top.twig" %}
+    <div class="page">
+        {% block page_content %}{% endblock %}
+    </div>
+{% endblock %}

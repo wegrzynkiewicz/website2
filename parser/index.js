@@ -6,8 +6,7 @@ process.addListener('unhandledRejection', (exception) => {
 });
 
 (async () => {
-    const container = await bootstrapContainer();
-    const fileProcessor = container.get('fileProcessor');
-    const files = await glob('./pages/**/*.yml');
+    const {fileProcessor} = await bootstrapContainer();
+    const files = await glob('./pages/**/*.page.js');
     const promises = files.map(async file => fileProcessor.processFile(file));
 })();

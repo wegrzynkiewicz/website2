@@ -39,6 +39,7 @@ async function generate(options) {
             filename: "[contenthash:6].js",
         },
         plugins: [
+            new CleanWebpackPlugin(),
             new AssetsPlugin({
                 filename: './build/assets.json',
                 prettyPrint: true,
