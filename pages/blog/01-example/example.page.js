@@ -6,7 +6,7 @@ export default async ({markdown, pageBuilder}) => {
             language: "pl",
             title: 'Example'
         },
-        template: 'block-entry.twig',
+        template: 'entries/blog-entry.twig',
         uri: '/blog/example',
     });
 }

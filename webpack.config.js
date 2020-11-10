@@ -2,7 +2,7 @@ const glob = require('glob-promise');
 const path = require('path');
 const AssetsPlugin = require('assets-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 
 const isProd = process.env.NODE_ENV === 'production';
 
@@ -31,12 +31,21 @@ async function generate(options) {
                         'sass-loader',
                     ],
                 },
+                {
+                    test: /\.(png|jpe?g|gif)$/i,
+                    loader: 'file-loader',
+                    options: {
+                        name: '[contenthash:6].[ext]',
+                        publicPath: '/a',
+                        outputPath: '../a',
+                    },
+                }
             ],
         },
         output: {
-            path: path.resolve(__dirname, 'dist/b'),
-            publicPath: '/b',
-            filename: "[contenthash:6].js",
+            path: path.resolve(__dirname, 'dist/b/'),
+            publicPath: '/b/',
+            filename: '[contenthash:6].js',
         },
         plugins: [
             new CleanWebpackPlugin(),

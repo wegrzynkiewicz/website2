@@ -5,7 +5,7 @@ export default async ({pageBuilder}) => {
             language: "pl",
             title: 'Homepage'
         },
-        template: 'homepage.twig',
+        template: 'entries/homepage.twig',
         uri: '/',
     });
 }

@@ -8,14 +8,14 @@ export async function createRenderer(container) {
         trimBlocks: true,
         throwOnUndefined: true,
     };
-    const loaders = [new FileSystemLoader('templates')];
+    const loaders = [new FileSystemLoader('views/templates')];
     const env = new Environment(loaders, options);
 
     for (const [property, service] of Object.entries(container)) {
         env.addGlobal(property, service);
     }
 
-    precompile('templates', {env});
+    precompile('views/templates', {env});
 
     return {
         render(fileName, parameters) {

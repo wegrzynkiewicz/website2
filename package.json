@@ -5,6 +5,7 @@
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^5.0.0",
     "esm": "^3.2.25",
+    "file-loader": "^6.2.0",
     "glob": "^7.1.6",
     "glob-promise": "^3.4.0",
     "marked": "^1.2.2",
